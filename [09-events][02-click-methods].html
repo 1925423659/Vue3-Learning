@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="greet">点我</button>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    name: 'Vuejs',
+                }
+            },
+            methods: {
+                greet(event) {
+                    alert('Hello ' + this.name + '!')
+                    if (event) {
+                        alert(event.target.tagName)
+                    }
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

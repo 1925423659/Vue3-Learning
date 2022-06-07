@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-bind:style="[baseStyles, overridingStyles]">Hello Vue!</div>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    baseStyles: {
+                        'color': 'green',
+                        'fontSize': '30px',
+                    },
+                    overridingStyles: {
+                        'font-weight': 'bold',
+                    }
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

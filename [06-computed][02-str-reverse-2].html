@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <p>原始字符串：{{ message }}</p>
+        <p>反转字符串：{{ reversedMessage }}</p>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    message: 'Hello Vue!'
+                }
+            },
+            computed: {
+                reversedMessage: function() {
+                    return this.message.split('').reverse().join('')
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

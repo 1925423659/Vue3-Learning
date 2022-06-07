@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <p>input元素：</p>
+        <input v-model="messageForInput" placeholder="编辑我。。。">
+        <p>input表单消息：{{ messageForInput }}</p>
+
+        <p>textarea元素：</p>
+        <textarea v-model="messageForTextarea" placeholder="多行文本输入。。。"></textarea>
+        <p>textarea表单消息：</p>
+        <p style="white-space:pre">{{ messageForTextarea }}</p>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    messageForInput: '',
+                    messageForTextarea: 'Vuejs\nhttps://vuejs.org/',
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

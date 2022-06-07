@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(value, key) in object">{{ key }}: {{ value }}</li>
+        </ul>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    object: {
+                        name: 'Vue3',
+                        url: 'https://vuejs.org',
+                        slogan: 'An approachable, performant and versatile framework for building web user interfaces.'
+                    }
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="n in 10">{{ n }}</li>
+        </ul>
+    </div>
+    <script>
+        const app = Vue.createApp()
+        app.mount('#app')
+    </script>
+</body>
+</html>

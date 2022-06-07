@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="one($event), two($event)">点我</button>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            methods: {
+                one(event) {
+                    alert('第一个事件处理器逻辑。。。')
+                },
+                two(event) {
+                    alert('第二个事件处理器逻辑。。。')
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

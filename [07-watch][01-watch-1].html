@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <p style="font-size:25px">计数器：{{ counter }}</p>
+        <button @click="counter++" style="font-size:25px">点我</button>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    counter: 1
+                }
+            }
+        })
+        vm = app.mount('#app')
+        vm.$watch('counter', function(newVal, oldVal){
+            alert('计数器值的变化：' + oldVal + ' 变为 ' + newVal + '！')
+        })
+    </script>
+</body>
+</html>

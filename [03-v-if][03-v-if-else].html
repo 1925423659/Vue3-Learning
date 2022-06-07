@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-if="Math.random() > 0.5">随机数大于0.5</div>
+        <div v-else>随机数不大于0.5</div>
+    </div>
+    <script>
+        const app = Vue.createApp().mount('#app')
+    </script>
+</body>
+</html>

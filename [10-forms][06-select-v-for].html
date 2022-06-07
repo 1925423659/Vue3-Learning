@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <select v-model="selected">
+            <option v-for="option in options" v-bind:value="option.value">{{ option.text }}</option>
+        </select>
+        <br>
+        <span>选择的是：{{ selected }}</span>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    selected: 'www.baidu.com',
+                    options: [
+                        {
+                            text: 'Baidu',
+                            value: 'www.baidu.com',
+                        },
+                        {
+                            text: 'Google',
+                            value: 'www.google.com',
+                        },
+                        {
+                            text: 'Taobao',
+                            value: 'www.taobao.com',
+                        }
+                    ]
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

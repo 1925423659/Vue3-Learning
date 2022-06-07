@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    name: 'Google',
+                    url: 'http://www.google.com'
+                }
+            },
+            computed: {
+                site: {
+                    get: function() {
+                        return this.name + ' ' + this.url
+                    },
+                    set: function(newValue) {
+                        var names = newValue.split(' ')
+                        this.name = names[0]
+                        this.url = names[names.length - 1]
+                    }
+                }
+            }
+        })
+        vm = app.mount('#app')
+
+        document.write('name: ' + vm.name)
+        document.write('<br>')
+        document.write('url: ' + vm.url)
+
+        document.write('<br> ----- 更新数据 ----- <br>')
+        vm.site = 'Vue.js https://vuejs.org'
+
+        document.write('name: ' + vm.name)
+        document.write('<br>')
+        document.write('url: ' + vm.url)
+    </script>
+</body>
+</html>

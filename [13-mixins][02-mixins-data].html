@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        const aMixin = {
+            data() {
+                return {
+                    message: 'hello',
+                    foo: 'vuejs',
+                }
+            }
+        }
+        const app = Vue.createApp({
+            mixins: [aMixin],
+            data() {
+                return {
+                    message: 'goodbye',
+                    bar: 'def',
+                }
+            },
+            created() {
+                document.write(JSON.stringify(this.$data))
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

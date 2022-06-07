@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        const app = Vue.createApp({
+            myOption: 'hello!'
+        })
+        app.mixin({
+            created() {
+                const myOption = this.$options.myOption
+                if (myOption) {
+                    document.write(myOption)
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

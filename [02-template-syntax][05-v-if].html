@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-if="seen">现在你看到我了</p>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    seen: true,
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

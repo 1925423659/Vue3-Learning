@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <component-a></component-a>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            components: {
+                'component-a': {
+                    template: '<h1>自定义组件！</h1>'
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

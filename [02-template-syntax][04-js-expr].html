@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        {{ 5 + 5 }} <br>
+        {{ ok ? 'YES' : 'NO' }} <br>
+        {{ message.split('').reverse().join('') }}
+        <div v-bind:id="'list-' + id">躺平吧少年！</div>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    ok: true,
+                    message: 'Hello Vue!',
+                    id: 101,
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

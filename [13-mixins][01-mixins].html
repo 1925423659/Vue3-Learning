@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app"></div>
+    <script>
+        const aMixin = {
+            created() {
+                this.hello()
+            },
+            methods: {
+                hello() {
+                    document.write('欢迎来到混入实例-Vuejs！')
+                }
+            }
+        }
+        const app = Vue.createApp({
+            mixins: [aMixin]
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

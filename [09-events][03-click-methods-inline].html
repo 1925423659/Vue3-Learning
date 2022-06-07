@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="say('hi')">Say hi</button>
+        <button v-on:click="say('what')">Say what</button>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            methods: {
+                say(message) {
+                    alert(message)
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

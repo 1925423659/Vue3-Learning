@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <p>原始字符串：{{ message }}</p>
+        <p>computed反转字符串：{{ reversedMessageFromComputed }}</p>
+        <p>methods反转字符串：{{ reversedMessageFromMethods() }}</p>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    message: 'Hello Vue!'
+                }
+            },
+            computed: {
+                reversedMessageFromComputed: function() {
+                    return this.message.split('').reverse().join('')
+                }
+            },
+            methods: {
+                reversedMessageFromMethods: function() {
+                    return this.message.split('').reverse().join('')
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

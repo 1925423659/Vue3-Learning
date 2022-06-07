@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-vuejs="{name: 'Vuejs', url: 'https://vuejs.org/'}"></div>
+    </div>
+    <script>
+        const app = Vue.createApp()
+        app.directive('vuejs', function(el, binding, vnode){
+            console.log(binding.value.name)
+            console.log(binding.value.url)
+            var s = JSON.stringify
+            el.innerHTML = s(binding.value)
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

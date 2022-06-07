@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <select name="fruit" v-model="selected" multiple>
+            <option value="www.baidu.com">Baidu</option>
+            <option value="www.google.com">Google</option>
+            <option value="www.taobao.com">Taobao</option>
+        </select>
+        <div>选择的网站是：{{ selected }}</div>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    selected: ['www.google.com'],
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

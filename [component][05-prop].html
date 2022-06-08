@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <site-info title="Baidu"></site-info>
+        <site-info title="Google"></site-info>
+        <site-info title="Taobao"></site-info>
+    </div>
+    <script>
+        const app = Vue.createApp()
+        app.component('site-info', {
+            props: ['title'],
+            template: '<h4>{{ title }}</h4>'
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

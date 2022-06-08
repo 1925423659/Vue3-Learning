@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <site-info v-bind:prop-a="100" v-bind:prop-b="'abcd'" v-bind:prop-c="'qwer'" v-bind:prop-d="1001" v-bind:prop-e="{title: 'iOS'}" v-bind:prop-f="'success for vue'"></site-info>
+        <br>
+        <br>
+        <site-info v-bind:prop-a="'vue'" v-bind:prop-b="{title: 'vue'}" v-bind:prop-c="100" v-bind:prop-d="" v-bind:prop-e="" v-bind:prop-f="'failed'"></site-info>
+    </div>
+    <script>
+        const app = Vue.createApp()
+        app.component('site-info', {
+            props: {
+                propA: Number,
+                propB: [String, Number],
+                propC: {
+                    type: String,
+                    required: true
+                },
+                propD: {
+                    type: Number,
+                    default: 1000
+                },
+                propE: {
+                    type: Object,
+                    default: function() {
+                        return { message: 'hello' }
+                    }
+                },
+                propF: {
+                    validator: function(value) {
+                        return ['success', 'warning', 'danger'].indexOf(value) !== -1
+                    }
+                },
+            },
+            template: `
+<label>A: {{ propA }}</label>
+<br>
+<label>B: {{ propB }}</label>
+<br>
+<label>C: {{ propC }}</label>
+<br>
+<label>D: {{ propD }}</label>
+<br>
+<label>E: {{ propE }}</label>
+<br>
+<label>F: {{ propF }}</label>
+`
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

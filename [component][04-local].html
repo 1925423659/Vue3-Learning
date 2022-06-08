@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <component-a></component-a>
+        <component-b></component-b>
+        <component-c></component-c>
+    </div>
+    <script>
+        const componentA = {
+            template: '<h1>自定义组件！</h1>'
+        }
+        const componentB = {
+            template: '<h2>自定义组件！</h2>'
+        }
+        const componentC = {
+            template: '<h3>自定义组件！</h3>'
+        }
+        const app = Vue.createApp({
+            components: {
+                'component-a': componentA,
+                'component-b': componentB,
+                'component-c': componentC,
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

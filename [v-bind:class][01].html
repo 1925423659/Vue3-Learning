@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        .class {
+            background-color: #444;
+            color: #eee;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <label for="r">修改颜色</label><input type="checkbox" v-model="use" id="r">
+        <br>
+        <br>
+        <div v-bind:class="{'class':use}">v-bind:class指令</div>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    use: false
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

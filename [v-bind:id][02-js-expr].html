@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-bind:id="'list-' + id">Hello Vue!</div>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    id: 123,
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

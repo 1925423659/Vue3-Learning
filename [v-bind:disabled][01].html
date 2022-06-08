@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-bind:disabled="isButtonDisabled">按钮</button>
+        <br>
+        <button v-on:click="isButtonDisabled = !isButtonDisabled">按钮启用/禁用</button>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    isButtonDisabled: false
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

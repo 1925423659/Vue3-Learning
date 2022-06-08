@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <span>这个将会改变：{{ counter }}</span>
+        <br>
+        <span v-once>这个将不改变：{{ counter }}</span>
+        <br>
+        <button v-on:click="counter += 1">增加 1</button>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    counter: 0,
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

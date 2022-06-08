@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <template v-for="site in sites">
+                <li>{{ site.text }}</li>
+                <li>----------</li>
+            </template>
+        </ul>
+    </div>
+    <script>
+        const sites = [
+            {
+                text: 'Google'
+            },
+            {
+                text: 'Runoob'
+            },
+            {
+                text: 'Taobao'
+            }
+        ]
+        const app = Vue.createApp({
+            data() {
+                return {
+                    sites: sites
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

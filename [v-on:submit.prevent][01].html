@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <form v-on:submit.prevent="addNewTodo">
+            <label for="new-todo">添加 todo</label>
+            <input id="new-todo" v-model="newTodoText" placeholder="例如：跑步">
+            <button>添加</button>
+        </form>
+        <div>{{ todos }}</div>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    newTodoText: '',
+                    todos: [],
+                }
+            },
+            methods: {
+                addNewTodo() {
+                    this.todos.push(this.newTodoText)
+                    this.newTodoText = ''
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

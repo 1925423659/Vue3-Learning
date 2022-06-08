@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <template v-if="seen">
+            <h1>网站</h1>
+            <p>Google</p>
+            <p>Runoob</p>
+            <p>Taobao</p>
+        </template>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    seen: true
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>

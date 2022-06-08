@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <div id="app">
+        <form v-on:submit.prevent="addNewTodo">
+            <label for="new-todo">添加todo</label>
+            <input id="new-todo" v-model="newTodoText" placeholder="例如：跑步">
+            <button>添加</button>
+        </form>
+        <ul>
+            <todo-item v-for="(todo, index) in todos" v-bind:key="todo.id" v-bind:title="todo.title" v-on:remove="todos.splice(index, 1)"></todo-item>
+        </ul>
+    </div>
+    <script>
+        const todos = [
+            {
+                id: 1,
+                title: '看电影',
+            },
+            {
+                id: 2,
+                title: '吃饭',
+            },
+            {
+                id: 3,
+                title: '学习',
+            },
+        ]
+        const app = Vue.createApp({
+            data() {
+                return {
+                    newTodoID: 4,
+                    newTodoText: '',
+                    todos: todos,
+                }
+            },
+            methods: {
+                addNewTodo() {
+                    this.todos.push({
+                        id: this.newTodoID,
+                        title: this.newTodoText,
+                    })
+                    this.newTodoID = this.newTodoID + 1
+                    this.newTodoText = ''
+                }
+            }
+        })
+        app.component('todo-item', {
+            template: `
+<li>{{ title }}<button v-on:click="$emit('remove')">删除</button></li>
+            `,
+            props: ['title'],
+            emits: ['remove']
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>
